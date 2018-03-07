@@ -1,5 +1,13 @@
+import org.apache.log4j.Logger
+
 package object serde {
-
-  case class Student(id: Int, name: String)
-
+  val ROLLNUMBER = 50
+  val student: Student = Student(ROLLNUMBER, "Sudeep James Tirkey")
+val TIMEOUT = 5000
+  case class Student(id: Int, name: String) {
+    override def toString: String = {
+      s"$id : $name"
+    }
+  }
+  val Log = Logger.getLogger(this.getClass)
 }
