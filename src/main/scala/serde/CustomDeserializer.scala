@@ -2,11 +2,11 @@ package serde
 
 import org.apache.kafka.common.serialization.Deserializer
 import java.io.{ObjectInputStream, ByteArrayInputStream}
-import java.util
+import java.util.Map
 
 class CustomDeserializer extends Deserializer[Student] {
 
-  override def configure(configs: util.Map[String, _], isKey: Boolean): Unit = {}
+  override def configure(configs: Map[String, _], isKey: Boolean): Unit = {}
 
   override def deserialize(topic: String, bytes: Array[Byte]): Student = {
     val byteIn = new ByteArrayInputStream(bytes)
